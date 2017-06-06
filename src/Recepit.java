@@ -3,12 +3,12 @@ import java.util.Date;
 public abstract class Recepit {
 	
 	Date date = new Date();
-	public void recepit(String accountNumber, String userName, String transType, double transAmount, double currentBalance){
+	public void recepit(int random, String accountNumber, String userName, String transType, double transAmount, double currentBalance){
 		
 		System.out.println("+--------------------------------------------+");	
 		System.out.println("|      CapitalOne Bank ATM Receipt           |");
 		System.out.println("|"+     date   +                            "|");
-		System.out.println("|      ATM Location # 123                    |");
+		System.out.println("|      ATM Location # "+random             +"|");
 		System.out.println("|                                            |");
 		System.out.println("|                                            |");
 		System.out.println("|     Account Number: "+   accountNumber   +"|");

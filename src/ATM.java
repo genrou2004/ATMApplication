@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class ATM extends Recepit{
@@ -5,6 +6,7 @@ public class ATM extends Recepit{
 	
 	Scanner scan = new Scanner(System.in);
 	Account account = new Account();
+	Random random = new Random();
 	
 	int choice, count;
 	double deposit, withdraw, currentBalance;
@@ -34,7 +36,7 @@ public class ATM extends Recepit{
             }
             if (!(originalBalance.equals("error"))){
             	System.out.println("\nYour Current Balance is:");
-                 recepit(account_number, userName, "Current Balance", 0.00, currentBalance=Double.parseDouble(originalBalance));
+                 recepit(random.nextInt(100),account_number, userName, "Current Balance", 0.00, currentBalance=Double.parseDouble(originalBalance));
             }
             else
                 System.out.println(originalBalance);
@@ -60,7 +62,7 @@ public class ATM extends Recepit{
 			deposit = scan.nextDouble();
 			currentBalance =  account.deposit(deposit, currentBalance);
 			
-			recepit(account_number, userName, "Deposit", deposit, currentBalance);
+			recepit(random.nextInt(100),account_number, userName, "Deposit", deposit, currentBalance);
 			
 			//System.out.printf("Your New Balance is $%.2f\n", currentBalance);
 			System.out.println();
@@ -75,13 +77,13 @@ public class ATM extends Recepit{
                     withdraw = scan.nextDouble();
                 }
 				currentBalance = account.withdraw(currentBalance, withdraw);
-				recepit(account_number, userName, "Withdraw", withdraw, currentBalance);
+				recepit(random.nextInt(100),account_number, userName, "Withdraw", withdraw, currentBalance);
                // System.out.printf("your current balance is $%.2f\n: "+ currentBalance);
                 System.out.println();
 				
 			break;
 		case 3:
-			recepit(account_number, userName, "Balance", 0.00, currentBalance);
+			recepit(random.nextInt(100),account_number, userName, "Balance", 0.00, currentBalance);
 			System.out.printf("\nYour Current Balance is $%.2f\n", currentBalance);
 			System.out.println();
 			break;

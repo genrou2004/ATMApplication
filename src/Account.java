@@ -55,25 +55,25 @@ public class Account implements iATM{
     {
         System.out.printf("\nYour Current Balance is $%.2f\n", currentBalance);
     }
-	public static String validateUserInput(String acctNum, String pwd)
+	public static String validateUserInput(String accountNumber, String password)
     {
         String result = "error";
        
-        String a = "123456-5 password 1200.36";
-        String b = "1234567-6 passwordtwo 560.20";
-        String c = "98765-0 anotherpassword 250.74";
+        String accountOne = "123456-5 password 1200.36";
+        String accountTwo = "1234567-6 passwordtwo 560.20";
+        String accountThree = "98765-0 anotherpassword 250.74";
        
-        if (acctNum.equals(a.substring(0, a.indexOf(" "))) && 
-                pwd.equals(a.substring(a.indexOf(" ")+1,a.lastIndexOf(" "))))
-            return result = a.substring(a.lastIndexOf(" ") + 1);
+        if (accountNumber.equals(accountOne.substring(0, accountOne.indexOf(" "))) && 
+        		password.equals(accountOne.substring(accountOne.indexOf(" ")+1,accountOne.lastIndexOf(" "))))
+            return result = accountOne.substring(accountOne.lastIndexOf(" ") + 1);
 
-        if (acctNum.equals(b.substring(0, b.indexOf(" "))) && 
-                pwd.equals(b.substring(b.indexOf(" ")+1,b.lastIndexOf(" "))))
-            return result = b.substring(b.lastIndexOf(" ") + 1);
+        if (accountNumber.equals(accountTwo.substring(0, accountTwo.indexOf(" "))) && 
+        		password.equals(accountTwo.substring(accountTwo.indexOf(" ")+1,accountTwo.lastIndexOf(" "))))
+            return result = accountTwo.substring(accountTwo.lastIndexOf(" ") + 1);
 
-        if (acctNum.equals(c.substring(0, c.indexOf(" "))) && 
-                pwd.equals(c.substring(c.indexOf(" ") + 1,c.lastIndexOf(" "))))
-            return result = c.substring(c.lastIndexOf(" ") + 1);
+        if (accountNumber.equals(accountThree.substring(0, accountThree.indexOf(" "))) && 
+        		password.equals(accountThree.substring(accountThree.indexOf(" ") + 1,accountThree.lastIndexOf(" "))))
+            return result = accountThree.substring(accountThree.lastIndexOf(" ") + 1);
 
         return result;
     }
